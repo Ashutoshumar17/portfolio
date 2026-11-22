@@ -18,6 +18,7 @@ const MapPinIcon = () => (
 
 export default function Contact({ config }) {
   const ref = useScrollReveal();
+  const githubUser = config.github ? config.github.replace('https://github.com/', '') : '';
 
   return (
     <section id="contact" className="section contact">
@@ -56,7 +57,7 @@ export default function Contact({ config }) {
             <a href={config.github} target="_blank" rel="noopener noreferrer" className="contact-card">
               <GitHubIcon />
               <span className="contact-card-label">GitHub</span>
-              <span className="contact-card-value">Ashutoshkumar17</span>
+              <span className="contact-card-value">{githubUser}</span>
             </a>
           )}
           {config.linkedin && (

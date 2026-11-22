@@ -1,7 +1,8 @@
 // ============================================================
 //  PORTFOLIO CONFIGURATION — SINGLE SOURCE OF TRUTH
 // ============================================================
-//  Updated with confirmed details from Ashutosh's resumes.
+//  Synchronized with verified GitHub profile:
+//  https://github.com/Ashutoshumar17
 // ============================================================
 
 const CONFIG = {
@@ -10,16 +11,15 @@ const CONFIG = {
   // ----------------------------------------------------------
   personal: {
     name: "Ashutosh Kumar",
-    headline: "B.Tech in Electronics & Communication Engineering",
+    headline: "B.Tech in Electronics & Communication Engineering — VIT Chennai",
     tagline:
-      "Building Generative AI applications, stateful agentic workflows, and full-custom VLSI/embedded systems",
+      "Building practical systems at the intersection of Generative AI, software engineering, and core electronics",
     location: "Chennai, Tamil Nadu",
     email: "ashukr0410@gmail.com",
-    collegeEmail: "Ashutosh.kumar2024@vitstudent.ac.in",
+    collegeEmail: "ashutosh.kumar2024a@vitstudent.ac.in",
     phone: "+91 6201721260",
-    github: "https://github.com/Ashutoshkumar17",
+    github: "https://github.com/Ashutoshumar17",
     linkedin: "https://www.linkedin.com/in/ashutosh-kumar-473208370",
-    // Resume link - can be hosted on Google Drive, GitHub releases, or placed in public/
     resumeUrl: "",
   },
 
@@ -29,8 +29,8 @@ const CONFIG = {
   about: {
     paragraphs: [
       "I'm an Electronics and Communication Engineering undergraduate at Vellore Institute of Technology (VIT), Chennai (Aug 2024 – May 2028).",
-      "My profile spans two complementary worlds: developing robust Generative AI applications in Python (LLM agents, LangGraph workflows, RAG pipelines, FastAPI microservices) and deep engineering fundamentals in ECE (full-custom CMOS VLSI design in Cadence Virtuoso, embedded systems, and microcontroller programming).",
-      "Whether designing an agentic restaurant ordering graph with retry logic, building a facial recognition attendance system with AWS Lambda and MongoDB, or performing transistor-level 2:1 MUX layout verification, I focus on structured, reliable, and high-impact engineering.",
+      "My work spans two closely connected domains: developing intelligent software and Generative AI applications in Python (LLM agents, LangGraph workflows, RAG pipelines, FastAPI backends) and core hardware engineering (full-custom CMOS VLSI design in Cadence Virtuoso, digital signal processing, embedded systems, and microcontroller firmware).",
+      "Whether designing an agentic restaurant order automation graph, packaging a facial-recognition attendance backend as an AWS container, developing digital hearing aid DSP algorithms, or designing transistor-level CMOS transmission-gate multiplexers, I focus on building robust, well-architected solutions.",
     ],
   },
 
@@ -44,7 +44,7 @@ const CONFIG = {
   ],
 
   // ----------------------------------------------------------
-  //  SKILLS
+  //  SKILLS (Synchronized with GitHub & Resumes)
   // ----------------------------------------------------------
   skills: {
     "Programming & Core": {
@@ -52,8 +52,11 @@ const CONFIG = {
       items: [
         { name: "Python" },
         { name: "C++" },
+        { name: "C" },
+        { name: "Java" },
+        { name: "JavaScript" },
         { name: "SQL" },
-        { name: "Embedded C" },
+        { name: "HTML5 / CSS3" },
         { name: "Data Structures & Algorithms" },
         { name: "OOP" },
         { name: "Git & GitHub" },
@@ -63,30 +66,31 @@ const CONFIG = {
       category: "software-ai",
       items: [
         { name: "LLM Agents" },
-        { name: "Agentic Workflows" },
-        { name: "LangGraph" },
-        { name: "RAG" },
+        { name: "LangGraph Workflows" },
+        { name: "RAG Pipelines" },
         { name: "FastAPI" },
         { name: "Pydantic" },
         { name: "Sentence Transformers" },
         { name: "Tool / Function Calling" },
+        { name: "Qdrant Vector DB" },
         { name: "Semantic Search" },
-        { name: "Prompt Engineering" },
         { name: "Groq API" },
         { name: "Tavily Search API" },
+        { name: "Prompt Engineering" },
       ],
     },
     "Cloud, Web & Databases": {
       category: "software-ai",
       items: [
-        { name: "AWS Lambda" },
-        { name: "API Gateway" },
+        { name: "AWS EC2 / Lambda" },
         { name: "Docker / ECR" },
         { name: "MongoDB Atlas" },
+        { name: "MySQL" },
         { name: "REST APIs" },
         { name: "Streamlit" },
         { name: "PyTorch" },
-        { name: "NumPy" },
+        { name: "NumPy & Matplotlib" },
+        { name: "Vite" },
       ],
     },
     "ECE / EDA Tools & Hardware": {
@@ -94,122 +98,176 @@ const CONFIG = {
       items: [
         { name: "Cadence Virtuoso (GPDK 90nm)" },
         { name: "Verilog HDL" },
-        { name: "Keil" },
+        { name: "Ansys HFSS" },
         { name: "LTspice" },
+        { name: "MATLAB" },
+        { name: "Keil" },
+        { name: "Digital Signal Processing (DSP)" },
         { name: "CMOS VLSI Design" },
-        { name: "Analog & Digital Circuits" },
-        { name: "Microcontroller (ATmega328P)" },
-        { name: "Arduino" },
+        { name: "Embedded C (8051 / ATmega328P)" },
+        { name: "Antenna & Circuit Design" },
       ],
     },
   },
 
   // ----------------------------------------------------------
-  //  PROJECTS
+  //  PROJECTS (All verified repository links directly to GitHub)
   // ----------------------------------------------------------
   projects: [
     {
-      title: "Restaurant Order Management AI Agent",
+      title: "Restaurant Order Automation Agent",
       category: "software-ai",
       description:
-        "Built a stateful LangGraph agentic workflow utilizing a Groq-hosted LLM to parse natural-language orders with conditional routing across order validation, inventory checks, customer confirmation, cooking, and serving with retry logic for failures.",
+        "Stateful LangGraph agentic workflow that uses Groq-hosted LLMs to interpret natural-language orders and drive a multi-step ordering flow across inventory validation, customer confirmation, cooking, and serving with retry logic.",
       technologies: ["Python", "LangGraph", "Groq API", "LLM Agents"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
+      repoUrl: "https://github.com/Ashutoshumar17/Restaurant-Order-Automation-Agent",
       demoUrl: "",
       bullets: [
-        "Designed stateful graph with conditional routing and retry logic",
-        "Handled partial-availability and cooking/serving fallback flows",
-      ],
-    },
-    {
-      title: "Hireme – AI Resume Assistant",
-      category: "software-ai",
-      description:
-        "FastAPI REST service parsing PDF resumes via pypdf and using an LLM for structured schema-validated data extraction into Pydantic models with grounded question-answering for recruiters.",
-      technologies: ["FastAPI", "Python", "Groq API", "Pydantic", "pypdf"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
-      demoUrl: "",
-      bullets: [
-        "Structured data extraction into Pydantic schema-validated JSON",
-        "Interactive testing via auto-generated Swagger/OpenAPI docs",
-      ],
-    },
-    {
-      title: "RAG-based Q&A System",
-      category: "software-ai",
-      description:
-        "Retrieval-Augmented Generation pipeline embedding knowledge bases with all-MiniLM-L6-v2 and performing cosine similarity ranking; passes top-matching context to Groq's GPT-OSS-120B with NumPy in-memory vector storage.",
-      technologies: ["Python", "Sentence Transformers", "Groq API", "NumPy", "RAG"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
-      demoUrl: "",
-      bullets: [
-        "all-MiniLM-L6-v2 vector embeddings with cosine similarity search",
-        "Context-grounded answer generation with fast inference",
-      ],
-    },
-    {
-      title: "Tool-Calling AI Agent",
-      category: "software-ai",
-      description:
-        "Dynamic LLM agent on Groq utilizing function calling to select and execute tools for live web search (Tavily), weather data, and complex mathematical calculations in an automated loop.",
-      technologies: ["Python", "Groq API", "Tavily Search API", "Tool Calling"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
-      demoUrl: "",
-      bullets: [
-        "Autonomous agent loop: tool call parsing, execution, and synthesis",
-        "Secure environment variable API key management",
+        "Stateful graph with conditional routing across order validation and kitchen flows",
+        "Partial-availability handling and automated retry logic for cooking/serving exceptions",
       ],
     },
     {
       title: "Cloud-Based Smart Attendance System",
       category: "software-ai",
       description:
-        "Facial-recognition attendance system using MTCNN and FaceNet 512-d embeddings matched against stored profiles in MongoDB Atlas. Features a 16-endpoint FastAPI backend packaged as an AWS Lambda container with live faculty dashboard.",
-      technologies: ["FastAPI", "PyTorch", "MongoDB Atlas", "AWS Lambda", "Docker"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
+        "Facial-recognition attendance tracking system utilizing MTCNN face detection and FaceNet (InceptionResnetV1) 512-d embeddings. Backed by a 16-endpoint FastAPI backend on AWS with MongoDB Atlas compound indexing and faculty dashboard.",
+      technologies: ["FastAPI", "PyTorch", "MongoDB Atlas", "AWS EC2", "JavaScript"],
+      repoUrl: "https://github.com/Ashutoshumar17/cloud-biometric-attendance",
       demoUrl: "",
       bullets: [
-        "Compound indexing on (student_id, session_id) prevents duplicate check-ins",
-        "Packaged backend as AWS Lambda container image via ECR & API Gateway",
+        "512-d FaceNet cosine similarity matching against stored student embeddings",
+        "Unique compound index on (student_id, session_id) prevents duplicate check-ins",
+      ],
+    },
+    {
+      title: "RAG Question Answering System",
+      category: "software-ai",
+      description:
+        "Retrieval-Augmented Generation pipeline embedding a knowledge base using all-MiniLM-L6-v2 / Qdrant vector search. Ranks documents by cosine similarity and provides contextual grounding to Groq's GPT-OSS-120B.",
+      technologies: ["Python", "Sentence Transformers", "Qdrant", "Groq API", "RAG"],
+      repoUrl: "https://github.com/Ashutoshumar17/RAG_QnA",
+      demoUrl: "",
+      bullets: [
+        "Vector search semantic retrieval ranking documents for context grounding",
+        "In-memory embedding management and low-latency answer generation",
+      ],
+    },
+    {
+      title: "AI Agent with Tool Calling",
+      category: "software-ai",
+      description:
+        "Autonomous Python AI agent leveraging Groq function calling to dynamically select and invoke external tools for web search (Tavily), real-time weather forecasts, and mathematical calculations with robust error handling.",
+      technologies: ["Python", "Groq API", "Tavily API", "Weather API", "Tool Calling"],
+      repoUrl: "https://github.com/Ashutoshumar17/Ai_Agent",
+      demoUrl: "",
+      bullets: [
+        "Autonomous loop: parse tool calls, execute API functions, return synthesized response",
+        "Interactive CLI interface with secure environment variable API authentication",
+      ],
+    },
+    {
+      title: "AI Resume Assistant (Hireme)",
+      category: "software-ai",
+      description:
+        "FastAPI REST service parsing PDF resumes via pypdf and extracting structured candidate intelligence into Pydantic schema-validated JSON with grounded Q&A support for recruiter queries.",
+      technologies: ["FastAPI", "Python", "Groq API", "Pydantic", "pypdf"],
+      repoUrl: "https://github.com/Ashutoshumar17/AI-Resume-Assistant",
+      demoUrl: "",
+      bullets: [
+        "Structured schema-validated JSON extraction from multipart PDF uploads",
+        "Interactive testing suite using FastAPI's auto-generated Swagger documentation",
+      ],
+    },
+    {
+      title: "AI Resume Shortlister",
+      category: "software-ai",
+      description:
+        "AI-powered candidate screening tool comparing resumes against job descriptions to generate compatibility scores, keyword extraction, and detailed skill-gap analysis with recruiter-friendly feedback.",
+      technologies: ["Python", "Streamlit", "Groq API", "Pydantic", "NLP"],
+      repoUrl: "https://github.com/Ashutoshumar17/Resume-Shortlister",
+      demoUrl: "",
+      bullets: [
+        "PDF/DOCX resume parsing and LLM-driven candidate capability assessment",
+        "Interactive Streamlit interface with automated score generation",
+      ],
+    },
+    {
+      title: "AudioDSP — Digital Hearing Aid",
+      category: "ece",
+      description:
+        "Digital audio-processing project exploring signal processing algorithms, frequency-shaping filters, and dynamic range compression techniques tailored for digital hearing aid applications.",
+      technologies: ["Python", "DSP", "Audio Processing", "NumPy", "Matplotlib"],
+      repoUrl: "https://github.com/Ashutoshumar17/AudioDSP-HearingAid",
+      demoUrl: "",
+      bullets: [
+        "Discrete-time signal analysis, digital filtering, and Fourier transforms",
+        "Audio enhancement and noise reduction pipelines for hearing devices",
+      ],
+    },
+    {
+      title: "Embedded Keypad Security System",
+      category: "ece",
+      description:
+        "Microcontroller-based security access control system interfacing a 4x4 matrix keypad and LCD. Utilizes register-level timer interrupts and PWM to actuate a servo locking mechanism with failed-attempt lockout logic.",
+      technologies: ["Embedded C", "Microcontroller", "Keypad Interface", "LCD", "PWM"],
+      repoUrl: "https://github.com/Ashutoshumar17/Embedded-Keypad-Security-System",
+      demoUrl: "",
+      bullets: [
+        "Register-level timer programming and PWM output for physical locking",
+        "Password verification logic with retry-limit security safeguards",
       ],
     },
     {
       title: "2:1 CMOS Transmission Gate Multiplexer",
       category: "ece",
       description:
-        "Full-custom VLSI design in Cadence Virtuoso (GPDK 90nm). Optimized propagation delay via Wp/Wn ratio tuning, measured tPLH/tPHL transient delays, and verified DRC clean and LVS matched layout with parasitic extraction.",
+        "Full-custom VLSI design in Cadence Virtuoso (GPDK 90nm). Optimized propagation delay via Wp/Wn ratio tuning, measured tPLH/tPHL transient delays, and verified DRC clean and LVS matched layout.",
       technologies: ["Cadence Virtuoso", "GPDK 90nm", "CMOS VLSI", "DRC/LVS"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
+      repoUrl: "https://github.com/Ashutoshumar17",
       demoUrl: "",
       bullets: [
-        "Transistor-level CMOS transmission gate architecture",
-        "DRC clean & LVS matched layout verification and post-layout parasitics",
+        "Transistor-level transmission-gate architecture minimizing parasitic delays",
+        "Completed layout verification: DRC clean, LVS matched, post-layout simulation",
+      ],
+    },
+    {
+      title: "Five-Stage CMOS Ring Oscillator",
+      category: "ece",
+      description:
+        "VLSI design and full-custom layout of a five-stage CMOS ring oscillator in Cadence Virtuoso (GPDK 90nm) to measure stage delay, oscillation frequency, and transient behavior.",
+      technologies: ["Cadence Virtuoso", "GPDK 90nm", "CMOS Layout", "VLSI"],
+      repoUrl: "https://github.com/Ashutoshumar17",
+      demoUrl: "",
+      bullets: [
+        "Five-stage inverter loop design analyzing propagation delay and frequency",
+        "Full DRC/LVS layout verification and transient simulation",
+      ],
+    },
+    {
+      title: "FIFO Inventory Management System",
+      category: "software-ai",
+      description:
+        "Object-oriented Python inventory management system implementing the First-In First-Out (FIFO) algorithm with CSV-based persistent storage, automated stock tracking, and profit valuation.",
+      technologies: ["Python", "OOP", "CSV Persistence", "Algorithms"],
+      repoUrl: "https://github.com/Ashutoshumar17/FIFO-Inventory-Management-System",
+      demoUrl: "",
+      bullets: [
+        "Clean object-oriented architecture for inventory ops and sales processing",
+        "Automated inventory valuation and transaction history logging",
       ],
     },
     {
       title: "Metal Detection System using ZVS Oscillator",
       category: "ece",
       description:
-        "Designed a Zero Voltage Switching (ZVS) LC oscillator circuit interfaced with Arduino to detect frequency shifts via timer interrupts and classify ferromagnetic vs. paramagnetic metals by inductance variations.",
+        "Zero Voltage Switching (ZVS) LC oscillator circuit interfaced with an Arduino microcontroller to detect frequency shifts via timer interrupts and classify material types through inductance variations.",
       technologies: ["LTspice", "Arduino", "Analog Circuit Design", "ZVS Oscillator"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
+      repoUrl: "https://github.com/Ashutoshumar17",
       demoUrl: "",
       bullets: [
-        "Frequency variation measurement using Arduino timer interrupts",
-        "Inductance analysis to differentiate material types",
-      ],
-    },
-    {
-      title: "Embedded Password-Based Access Control",
-      category: "ece",
-      description:
-        "Microcontroller-based authentication system using Arduino, 4x4 keypad, and LCD display. Generated precise 50 Hz PWM via ATmega328P timer registers to actuate a servo lock with retry-limit security logic.",
-      technologies: ["Keil", "ATmega328P", "Embedded C", "Arduino", "PWM"],
-      repoUrl: "https://github.com/Ashutoshkumar17",
-      demoUrl: "",
-      bullets: [
-        "Direct ATmega328P register programming for 50 Hz PWM servo control",
-        "Tamper-resistant security logic with failed attempt lockouts",
+        "Frequency shift detection using microcontroller hardware timer interrupts",
+        "Inductive impedance profiling to differentiate metallic materials",
       ],
     },
   ],
@@ -224,8 +282,8 @@ const CONFIG = {
       period: "Aug 2024 – May 2028 (Expected)",
       gpa: "8.32 / 10",
       details: [
-        "Core Coursework: Analog & Digital Circuits, CMOS VLSI Design, Microcontrollers, Data Structures & Algorithms, OOP",
-        "Active student researcher and developer exploring Python AI agent architectures alongside hardware design",
+        "Coursework: Digital Signal Processing, Analog & Digital Circuits, CMOS VLSI Design, Microcontrollers, Antenna & RF, Data Structures & Algorithms, OOP",
+        "Actively building open-source projects bridging software engineering and physical electronics",
       ],
     },
   ],
@@ -241,7 +299,7 @@ const CONFIG = {
   ],
 
   // ----------------------------------------------------------
-  //  EXPERIENCE (Ready for future internships/roles)
+  //  EXPERIENCE (Ready for future roles)
   // ----------------------------------------------------------
   experience: {
     enabled: false,
