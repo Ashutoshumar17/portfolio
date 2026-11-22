@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 /* GitHub SVG icon */
@@ -14,6 +15,73 @@ const ExternalIcon = () => (
     <line x1="10" y1="14" x2="21" y2="3"/>
   </svg>
 );
+
+/**
+ * Individual Project Card with Champagne Specular Spotlight tracking
+ */
+function ProjectCard({ project, idx }) {
+  const cardRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  };
+
+  return (
+    <article
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="project-card specular-card"
+      style={{ '--i': idx }}
+    >
+      {/* Specular Spotlight highlight layer */}
+      <div className="specular-spotlight" aria-hidden="true" />
+
+      {/* Category indicator */}
+      <div className="project-card-top">
+        <span className={`project-cat-dot ${project.category}`} aria-hidden="true" />
+        <span className="project-cat-label">
+          {project.category === 'software-ai' ? 'Software & GenAI' : 'ECE & Hardware'}
+        </span>
+      </div>
+
+      <h3 className="project-title">{project.title}</h3>
+      <p className="project-desc">{project.description}</p>
+
+      {project.bullets && project.bullets.length > 0 && (
+        <ul className="project-bullets">
+          {project.bullets.map((b, bIdx) => (
+            <li key={bIdx}>{b}</li>
+          ))}
+        </ul>
+      )}
+
+      <div className="project-tech">
+        {project.technologies.map((t) => (
+          <span key={t} className="tech-chip">{t}</span>
+        ))}
+      </div>
+
+      <div className="project-links">
+        {project.repoUrl ? (
+          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+            <GitHubIcon /> GitHub
+          </a>
+        ) : null}
+        {project.demoUrl ? (
+          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+            <ExternalIcon /> Live Demo
+          </a>
+        ) : null}
+      </div>
+    </article>
+  );
+}
 
 export default function Projects({ projects, roles, activeRole, setActiveRole }) {
   const ref = useScrollReveal();
@@ -53,49 +121,7 @@ export default function Projects({ projects, roles, activeRole, setActiveRole })
 
         <div className="projects-grid">
           {visible.map((project, idx) => (
-            <article
-              key={project.title}
-              className="project-card"
-              style={{ '--i': idx }}
-            >
-              {/* Category indicator */}
-              <div className="project-card-top">
-                <span className={`project-cat-dot ${project.category}`} aria-hidden="true" />
-                <span className="project-cat-label">
-                  {project.category === 'software-ai' ? 'Software & GenAI' : 'ECE & Hardware'}
-                </span>
-              </div>
-
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-desc">{project.description}</p>
-
-              {project.bullets && project.bullets.length > 0 && (
-                <ul className="project-bullets">
-                  {project.bullets.map((b, bIdx) => (
-                    <li key={bIdx}>{b}</li>
-                  ))}
-                </ul>
-              )}
-
-              <div className="project-tech">
-                {project.technologies.map((t) => (
-                  <span key={t} className="tech-chip">{t}</span>
-                ))}
-              </div>
-
-              <div className="project-links">
-                {project.repoUrl ? (
-                  <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="project-link">
-                    <GitHubIcon /> GitHub
-                  </a>
-                ) : null}
-                {project.demoUrl ? (
-                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="project-link">
-                    <ExternalIcon /> Live Demo
-                  </a>
-                ) : null}
-              </div>
-            </article>
+            <ProjectCard key={project.title} project={project} idx={idx} />
           ))}
         </div>
       </div>

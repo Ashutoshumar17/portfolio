@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Lenis from 'lenis';
 import CONFIG from './config';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,6 +13,32 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [activeRole, setActiveRole] = useState('all');
+
+  // Silk Momentum Scrolling via Lenis (lerp: 0.075)
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const lenis = new Lenis({
+      lerp: 0.075,
+      smoothWheel: true,
+      wheelMultiplier: 0.85,
+    });
+
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <div className="app">
