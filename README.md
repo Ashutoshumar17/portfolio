@@ -1,80 +1,53 @@
 # Ashutosh Kumar — Portfolio
 
-A polished, responsive portfolio website built with **React + Vite**.
+Polished, responsive portfolio website built with **React + Vite** and ready for **Streamlit Cloud deployment**.
 
-## Quick Start
+Palette: **Obsidian & Champagne** (The Gold Standard)
+
+---
+
+## 🌐 Deploy to Streamlit Cloud (Access from any Phone, PC, Laptop)
+
+Streamlit Cloud hosts your portfolio **free, 24/7**, accessible by anyone via a link like `https://ashutosh-kumar.streamlit.app`.
+
+### Step 1: Create a GitHub Repository
+1. Go to **[github.com/new](https://github.com/new)**.
+2. Repository name: `portfolio`.
+3. Set to **Public** and click **Create repository**.
+
+### Step 2: Push your code to GitHub
+Run in your PowerShell terminal:
+```powershell
+cd c:\Users\Ashut\OneDrive\Desktop\portfolio
+git remote add origin https://github.com/Ashutoshumar17/portfolio.git
+git branch -M main
+git push -u origin main
+```
+
+### Step 3: Deploy on Streamlit Cloud
+1. Go to **[share.streamlit.io](https://share.streamlit.io)** and log in with your GitHub account (`Ashutoshumar17`).
+2. Click **"Create app"** (or "New app").
+3. Set:
+   - **Repository**: `Ashutoshumar17/portfolio`
+   - **Branch**: `main`
+   - **Main file path**: `streamlit_app.py`
+   - **Custom subdomain**: `ashutosh-kumar` (or your choice)
+4. Click **Deploy!**
+
+Within 1 minute, you will have a live public link:
+👉 `https://ashutosh-kumar.streamlit.app`
+
+---
+
+## 💻 Local Commands
 
 ```bash
-# Install dependencies
-npm install
+# Run via Streamlit locally:
+python -m streamlit run streamlit_app.py
 
-# Start development server (hot-reload)
+# Or run via Vite dev server:
 npm run dev
 
-# Build for production
+# Rebuild single-file HTML bundle:
 npm run build
-
-# Preview the production build locally
-npm run preview
 ```
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── public/favicon.svg
-├── src/
-│   ├── config.js           ← ✏️ EDIT THIS FILE to update all content
-│   ├── main.jsx
-│   ├── App.jsx
-│   ├── index.css            ← Global styles and design tokens
-│   ├── hooks/
-│   │   └── useScrollReveal.js
-│   └── components/
-│       ├── Navbar.jsx
-│       ├── Hero.jsx
-│       ├── About.jsx
-│       ├── Skills.jsx
-│       ├── Projects.jsx
-│       ├── Experience.jsx   ← Hidden until experience.enabled = true
-│       ├── Education.jsx
-│       ├── Contact.jsx
-│       └── Footer.jsx
-├── index.html
-├── package.json
-└── vite.config.js
-```
-
-## ✏️ How to Update Content
-
-**Everything is in one file: `src/config.js`**
-
-| What to change | Where in config.js |
-|---|---|
-| Name, headline, tagline | `personal.name`, `personal.headline`, `personal.tagline` |
-| Email, phone, GitHub, LinkedIn | `personal.email`, `personal.phone`, etc. |
-| Résumé link | `personal.resumeUrl` |
-| About text | `about.paragraphs[]` |
-| Skills | `skills["Software / AI"].items`, `skills["ECE / Core Electronics"].items` |
-| Projects | `projects[]` — add/edit/reorder objects |
-| Education | `education[]` |
-| Experience | Set `experience.enabled = true` and fill `experience.items[]` |
-
-## 🚀 Deploy (make it public)
-
-### Option 1: Vercel (Easiest)
-1. Push to a GitHub repo
-2. Go to [vercel.com](https://vercel.com), sign in with GitHub
-3. Import your repo → it auto-detects Vite → click Deploy
-4. You get a public URL like `ashutosh-kumar.vercel.app`
-
-### Option 2: Netlify (Drag & Drop)
-1. Run `npm run build`
-2. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
-3. Drag the `dist/` folder onto the page
-4. Instant public URL
-
-### Option 3: GitHub Pages
-1. Install: `npm install --save-dev gh-pages`
-2. Add to package.json scripts: `"deploy": "gh-pages -d dist"`
-3. Run: `npm run build && npm run deploy`
